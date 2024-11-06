@@ -27,18 +27,19 @@ public class FormatRestResponse implements ResponseBodyAdvice<Object> {
       Class selectedConverterType,
       ServerHttpRequest request,
       ServerHttpResponse response) {
-    // TODO Auto-generated method stub
     HttpServletResponse servletResponse = ((ServletServerHttpResponse) response).getServletResponse();
     int status = servletResponse.getStatus();
+
     RestResponse<Object> res = new RestResponse<Object>();
     res.setStatusCode(status);
-    // case error
+
     if (status >= 400) {
       return body;
     } else {
       res.setData(body);
-      res.setMessage("Call API SUCCESS");
+      res.setMessage("CALL API SUCCESS");
     }
+
     return res;
   }
 
