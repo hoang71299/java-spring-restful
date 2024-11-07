@@ -66,4 +66,5 @@ public class UserController {
     User ericUser = this.userService.handleUpdateUser(user);
     return ResponseEntity.ok(ericUser);
   }
+
 }
